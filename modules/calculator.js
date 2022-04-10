@@ -1,15 +1,22 @@
 export const calculator = (() => {
-  const add = () => {
-    return 1;
+  const add = (firstNumber, secondNumber) => {
+    const result = firstNumber + secondNumber;
+    return roundTwoDecimals(result);
   };
-  const subtract = () => {
-    return 1;
+  const subtract = (firstNumber, secondNumber) => {
+    const result = firstNumber - secondNumber;
+    return roundTwoDecimals(result);
   };
-  const divide = () => {
-    return 1;
+  const divide = (firstNumber, secondNumber) => {
+    const result = firstNumber / secondNumber;
+    return roundTwoDecimals(result);
   };
-  const multiply = () => {
-    return 1;
+  const multiply = (firstNumber, secondNumber) => {
+    const result = firstNumber * secondNumber;
+    return roundTwoDecimals(result);
   };
+  function roundTwoDecimals(num) {
+    return Math.round((num + Number.EPSILON) * 100) / 100;
+  }
   return { add, subtract, divide, multiply };
 })();
